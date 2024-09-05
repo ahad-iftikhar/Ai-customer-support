@@ -39,16 +39,16 @@ export default function Home() {
     console.log(typeof result);
     console.log(typeof result.response);
 
-    const res = await result.response.text();
-    console.log(res);
-    const parsedRes = JSON.parse(res);
+    const response = await result.response.text();
+    // console.log(res);
+    // const parsedRes = JSON.parse(res);
 
-    let response = "";
-    if (Array.isArray(parsedRes)) {
-      response = parsedRes[0]?.content;
-    } else {
-      response = parsedRes.content;
-    }
+    // let response = res;
+    // if (Array.isArray(parsedRes)) {
+    //   response = parsedRes[0]?.content;
+    // } else {
+    //   response = parsedRes.content;
+    // }
 
     setMessages((messages) => {
       let otherMessages = messages.slice(0, messages.length - 1);
